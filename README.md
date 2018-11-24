@@ -1,3 +1,3 @@
 # \<krumholz\>
 
-Personal project
+Personal website
