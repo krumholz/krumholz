@@ -2,7 +2,8 @@ from flask import Flask, render_template
 from flask_sslify import SSLify
 
 app = Flask(__name__)
-sslify = SSLify(app)
+sslify = SSLify(app, permanent=True)
+
 
 @app.route("/")
 @app.route("/home")
