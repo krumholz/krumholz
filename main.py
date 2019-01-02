@@ -8,7 +8,7 @@ sslify = SSLify(app, permanent=True)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('index.html')
+    return render_template('home.html')
 
 @app.route('/dashboard')
 def dashboard():
