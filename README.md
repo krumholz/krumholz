@@ -1,3 +1,9 @@
-# \<krumholz\>
+# krumholz.xyz
+    Personal website
 
-Personal website
+### Technology
+* Python
+* Flask/Jinja
+* Google App Engine
+* Git
+* Pipenv
