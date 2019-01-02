@@ -1,6 +1,4 @@
 # krumholz.xyz
-    Personal website
-
 ### Technology
 * Python
 * Flask/Jinja
