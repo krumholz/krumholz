@@ -14,6 +14,10 @@ def home():
 def dashboard():
     return render_template("dashboard.html")
 
+@app.route('/sortable')
+def sortable():
+    return render_template("sortable.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

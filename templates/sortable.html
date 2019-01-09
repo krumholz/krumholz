@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="http://SortableJS.github.io/Sortable/Sortable.js"></script>
+        <!-- <link href="http://sortablejs.github.io/Sortable/st/app.css" rel="stylesheet" type="text/css"> -->
+        <style>
+            html {
+                background-image: -webkit-linear-gradient(bottom, #F4E2C9 20%, #F4D7C9 100%);
+                background-image: -ms-linear-gradient(bottom, #F4E2C9 20%, #F4D7C9 100%);
+                background-image: linear-gradient(to bottom, #F4E2C9 20%, #F4D7C9 100%);
+            }
+            html, body {
+                margin: 0;
+                padding: 0;
+                position: relative;
+                color: #464637;
+                min-height: 100%;
+                font-size: 20px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: 300;
+            }
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .container {
+                width: 80%;
+                margin: auto;
+                min-width: 1100px;
+                max-width: 1300px;
+                position: relative;
+            }
+            @media (min-width: 750px) and (max-width: 970px){
+                .container {
+                    width: 100%;
+                    min-width: 750px;
+                }
+            }
+            .sortable-ghost {
+                opacity: .2;
+            }
+            .block__list_words li {
+                background-color: #fff;
+                padding: 10px 40px;
+            }
+            .block__list_words .sortable-ghost {
+                opacity: 0.4;
+                background-color: #F4E2C9;
+            }
+            .block__list_words li:first-letter {
+                text-transform: uppercase;
+            }
+            .material-icons {
+                margin-right: 10px;
+                /* font: bold 20px Sans-Serif; */
+                color: #000;
+                display: inline-block;
+                cursor: move;
+            }
+            #handle1 li {
+        		position: relative;
+        	}
+            #handle1 .js-remove {
+        		-webkit-transition: opacity .2s;
+        		transition: opacity .2s;
+        		opacity: 0;
+        		display: block;
+        		cursor: pointer;
+        		color: #c00;
+        		top: 10px;
+        		right: 40px;
+        		position: absolute;
+        		font-style: normal;
+        	}
+            #handle1 li:hover .js-remove {
+        		opacity: 1;
+        	}
+            #handle button {
+        		color: #fff;
+        		width: 100%;
+        		border: none;
+        		outline: 0;
+        		opacity: .5;
+        		margin: 10px 0 0;
+        		transition: opacity .1s ease;
+        		cursor: pointer;
+        		background: #5F9EDF;
+        		padding: 10px 0;
+        		font-size: 20px;
+        	}
+    		#handle button:hover {
+    			opacity: 1;
+    		}
+        </style>
+    </head>
+    <body>
+        <div class="container" style="margin-top: 100px;">
+            <div id="handle" style="margin-left: 30px;">
+                <div>
+                    <div data-force="5" class="layer title title_xl">Drag handle and selectable text</div>
+                </div>
+                <div style="width: 30%; margin-left: 10px" class="block__list_words">
+                    <ul id="handle1">
+                        <li draggable="false" class="" style="">
+                            <i class="material-icons">drag_indicator</i>
+                            One
+                            <i class="js-remove">✖</i>
+                        </li>
+                        <li draggable="false" class="" style="">
+                            <i class="material-icons">drag_indicator</i>
+                            Two
+                            <i class="js-remove">✖</i>
+                        </li>
+                        <li draggable="false" class="" style="">
+                            <i class="material-icons">drag_indicator</i>
+                            Three
+                            <i class="js-remove">✖</i>
+                        </li>
+                        <li draggable="false" class="" style="">
+                            <i class="material-icons">drag_indicator</i>
+                            Four
+                            <i class="js-remove">✖</i>
+                        </li>
+                    </ul>
+                    <button id="addUser">Add</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            Sortable.create(handle1, {
+                ghostClass: 'ghost',
+                handle: ".material-icons",
+                animation: 150,
+        		filter: '.js-remove',
+        		onFilter: function (evt) {
+        			evt.item.parentNode.removeChild(evt.item);
+        		}
+            });
+        </script>
+    </body>
+</html>
